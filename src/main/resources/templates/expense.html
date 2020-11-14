@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
+	<title>Expense</title>
+</head>
+<body>
+<h1>Enter expense</h1>
+<form action="#" th:action="@{/}" th:object="${expense}" method="post">
+	<p>Description: <input type="text" th:field="*{description}"/><td th:if="${#fields.hasErrors('description')}"
+	                                                                  th:errors="*{description}">Description
+	Error</td></p>
+	<p>Amount: <input type="text" th:field="*{amount}"/><td th:if="${#fields.hasErrors('amount')}"
+	                                                        th:errors="*{amount}">Amount Error</td></p>
+	<p>Date: <input type="text" th:field="*{date}"/><td th:if="${#fields.hasErrors('date')}"
+	                                                    th:errors="*{date}">Date Error</td></p>
+	<p><input type="submit" value="Save"/> <input type="reset" value="Reset"/></p>
+</form>
+</body>
+</html>
