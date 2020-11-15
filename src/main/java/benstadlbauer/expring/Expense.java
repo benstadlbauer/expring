@@ -1,5 +1,7 @@
 package benstadlbauer.expring;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -8,7 +10,6 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Positive;
 import javax.validation.constraints.Size;
 import java.math.BigDecimal;
-import java.text.SimpleDateFormat;
 import java.util.Date;
 
 @Entity
@@ -27,8 +28,8 @@ public class Expense {
 	private BigDecimal amount;
 
 	@NotNull
-	@Size(min=8, max=8)
-	private String date;
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
+	private Date date;
 
 	public long getId() {
 		return id;
@@ -54,15 +55,15 @@ public class Expense {
 		this.amount = amount;
 	}
 
-	public String getDate() {
+	public Date getDate() {
 		if (this.date != null) {
 			return date;
 		} else {
-			return new SimpleDateFormat("yyyyMMdd").format(new Date());
+			return new Date();
 		}
 	}
 
-	public void setDate(String date) {
+	public void setDate(Date date) {
 		this.date = date;
 	}
 }

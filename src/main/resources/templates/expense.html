@@ -12,7 +12,7 @@
 	Error</td></p>
 	<p>Amount: <input type="text" th:field="*{amount}"/><td th:if="${#fields.hasErrors('amount')}"
 	                                                        th:errors="*{amount}">Amount Error</td></p>
-	<p>Date: <input type="text" th:field="*{date}"/><td th:if="${#fields.hasErrors('date')}"
+	<p>Date: <input type="date" th:field="*{date}"/><td th:if="${#fields.hasErrors('date')}"
 	                                                    th:errors="*{date}">Date Error</td></p>
 	<p><input type="submit" value="Save"/> <input type="reset" value="Reset"/></p>
 </form>
