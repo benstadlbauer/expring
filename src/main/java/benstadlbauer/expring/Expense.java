@@ -4,9 +4,10 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Positive;
 import javax.validation.constraints.Size;
+import java.math.BigDecimal;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -22,8 +23,8 @@ public class Expense {
 	private String description;
 
 	@NotNull
-	@Min(0)
-	private double amount;
+	@Positive
+	private BigDecimal amount;
 
 	@NotNull
 	@Size(min=8, max=8)
@@ -45,11 +46,11 @@ public class Expense {
 		this.description = description;
 	}
 
-	public double getAmount() {
+	public BigDecimal getAmount() {
 		return amount;
 	}
 
-	public void setAmount(double amount) {
+	public void setAmount(BigDecimal amount) {
 		this.amount = amount;
 	}
 
