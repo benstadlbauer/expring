@@ -16,6 +16,5 @@ where the category should be chosen from a given list.
 * Make the SSL not self-signed
 * Get a proper domain name
 * Back-up the database
-* Fill in my private previous data
 * Implement spring security with username, password, etc.
 * Make the application start automatically whenever the VM gets started
