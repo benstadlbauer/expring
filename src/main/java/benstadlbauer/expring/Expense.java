@@ -31,6 +31,9 @@ public class Expense {
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date date;
 
+	@NotNull
+	private Category category;
+
 	public long getId() {
 		return id;
 	}
@@ -65,6 +68,14 @@ public class Expense {
 
 	public void setDate(Date date) {
 		this.date = date;
+	}
+
+	public Category getCategory() {
+		return category;
+	}
+
+	public void setCategory(Category category) {
+		this.category = category;
 	}
 }
 

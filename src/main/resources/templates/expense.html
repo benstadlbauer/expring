@@ -14,6 +14,10 @@
 	                                                        th:errors="*{amount}">Amount Error</td></p>
 	<p>Date: <input type="date" th:field="*{date}"/><td th:if="${#fields.hasErrors('date')}"
 	                                                    th:errors="*{date}">Date Error</td></p>
+	<p>Category: <select name="category">
+		<option th:each="catOpt : ${T(benstadlbauer.expring.Category).values()}" th:value="${catOpt}"
+		        th:text="${catOpt.displayString}"></option>
+	</select></p>
 	<p><input type="submit" value="Save"/> <input type="reset" value="Reset"/></p>
 </form>
 </body>

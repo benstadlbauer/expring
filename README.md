@@ -8,8 +8,6 @@ This is the beginning of a web-application based on [Spring](https://spring.io/)
 where the category should be chosen from a given list. 
 
 # TODO
-* Implement categories (possibly as `enum`)
-  * and make them useable from the UI
 * Write tests for already existing code based on version 0.1 (commit `68ca286`)
 * Make a better-looking user-interface than the standard HTML look
   * Also make sure to be phone-friendly
