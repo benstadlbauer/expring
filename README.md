@@ -9,8 +9,6 @@ where the category should be chosen from a given list.
 
 # TODO
 * Write tests for already existing code based on version 0.1 (commit `68ca286`)
-* Make a better-looking user-interface than the standard HTML look
-  * Also make sure to be phone-friendly
 * Make the SSL not self-signed
 * Get a proper domain name
 * Back-up the database

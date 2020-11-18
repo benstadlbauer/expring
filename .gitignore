@@ -34,3 +34,6 @@ build/
 
 .mvn/
 out/
+
+Full logo
+src/main/resources/static/img/expring_full.svg

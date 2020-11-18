@@ -1,24 +1,83 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-	<meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
-	<title>Expense</title>
+	<meta http-equiv="Content-Type" content="text/html" charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<title>Expring</title>
+	<link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/checkout/">
+	<link href="bootstrap-4.5.3-dist/css/bootstrap.min.css" rel="stylesheet">
+	<style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+	</style>
+	<link href="css/expense.css" rel="stylesheet">
 </head>
-<body>
-<h1>Enter expense</h1>
-<form action="#" th:action="@{/}" th:object="${expense}" method="post">
-	<p>Description: <input type="text" th:field="*{description}"/><td th:if="${#fields.hasErrors('description')}"
-	                                                                  th:errors="*{description}">Description
-	Error</td></p>
-	<p>Amount: <input type="text" th:field="*{amount}"/><td th:if="${#fields.hasErrors('amount')}"
-	                                                        th:errors="*{amount}">Amount Error</td></p>
-	<p>Date: <input type="date" th:field="*{date}"/><td th:if="${#fields.hasErrors('date')}"
-	                                                    th:errors="*{date}">Date Error</td></p>
-	<p>Category: <select name="category">
-		<option th:each="catOpt : ${T(benstadlbauer.expring.Category).values()}" th:value="${catOpt}"
-		        th:text="${catOpt.displayString}"></option>
-	</select></p>
-	<p><input type="submit" value="Save"/> <input type="reset" value="Reset"/></p>
-</form>
+<body class="bg-light">
+<div class="container">
+	<div class="py-5 text-center">
+		<img class="d-block mx-auto mb-4" src="img/expring.svg" alt="" width="72" height="72">
+		<h2>Expring</h2>
+	</div>
+	<div class="row">
+		<div class="col-md-12">
+			<form action="#" th:action="@{/}" th:object="${expense}" method="post" class="needs-validation" novalidate>
+				<div class="mb-3">
+					<label for="description">Description</label>
+					<input type="text" class="form-control" id="description" placeholder="" th:field="*{description}" required>
+					<div class="invalid-feedback">
+						Please enter a valid description.
+					</div>
+					<td th:if="${#fields.hasErrors('description')}" th:errors="*{description}">Description error</td>
+					<label for="amount">Amount</label>
+					<input type="number" class="form-control" id="amount" placeholder="" th:field="*{amount}" required>
+					<div class="invalid-feedback">
+						Please enter a valid amount.
+					</div>
+					<td th:if="${#fields.hasErrors('amount')}" th:errors="*{amount}">Amount error</td>
+					<label for="date">Date</label>
+					<input type="date" class="form-control" id="date" th:field="*{date}" required>
+					<div class="invalid-feedback">
+						Please enter a valid date.
+					</div>
+					<td th:if="${#fields.hasErrors('date')}" th:errors="*{date}">Date error</td>
+					<label for="category">Category</label>
+					<select class="custom-select d-block w-100" id="category" name="category" required>
+						<option th:each="catOpt : ${T(benstadlbauer.expring.Category).values()}" th:value="${catOpt}"
+						        th:text="${catOpt.displayString}"></option>
+					</select>
+				</div>
+				<hr class="mb-4">
+				<button class="btn btn-secondary btn-lg btn-block" type="submit">Save</button>
+			</form>
+		</div>
+	</div>
+
+	<footer class="my-5 pt-5 text-muted text-center text-small">
+		<p class="mb-1">&copy; 2020 Benjamin Stadlbauer</p>
+<!--		<ul class="list-inline">-->
+<!--			<li class="list-inline-item"><a href="#">Privacy</a></li>-->
+<!--			<li class="list-inline-item"><a href="#">Terms</a></li>-->
+<!--			<li class="list-inline-item"><a href="#">Support</a></li>-->
+<!--		</ul>-->
+	</footer>
+</div>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+<script>window.jQuery || document.write('<script src="js/vendor/jquery.slim.min.js"><\/script>')</script>
+<script src="bootstrap-4.5.3-dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/form-validation.js"></script>
 </body>
 </html>
