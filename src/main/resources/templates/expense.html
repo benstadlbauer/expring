@@ -34,12 +34,11 @@
 </head>
 <body class="bg-light">
 <div class="container">
-	<div class="py-5 text-center">
-		<img class="d-block mx-auto mb-4" src="img/expring.svg" alt="" width="72" height="72">
-		<h2>Expring</h2>
-	</div>
 	<div class="row">
-		<div class="col-md-12">
+		<div class="col-sm">
+			<div class="py-5 text-center">
+				<img class="d-block mx-auto mb-4 img-fluid" src="img/expring_banner.svg" alt="">
+			</div>
 			<form action="#" th:action="@{/}" th:object="${expense}" method="post" class="needs-validation" novalidate>
 				<div class="mb-3">
 					<label for="description">Description</label>
