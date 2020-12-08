@@ -1,3 +1,5 @@
+# Abandoned!
+I decided to use another backend framework for my application. I'm doing some research right now and I will put a new repository on github soon. 
 # Expring
 This is the beginning of a web-application based on [Spring](https://spring.io/). I have had this idea for a long
  time and after some local console-based applications I decided to make this a web-application. This way I can access
